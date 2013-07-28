@@ -94,7 +94,7 @@
 %   Section Headers:
 %     \mySection{ title }{ ... } will create a new section block
 %     \mySubSection{ title }{ ... } will create a new subsection block
-%     \mySubSubSection{ title }{ ... } will create a new subsection block
+%     \mySubSubSection{ title }{ ... } will create a new subsubsection block
 %   Bullet Points:
 %     \bulletpoints{
 %        \item bullet point 1
@@ -113,24 +113,27 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%%%% This is an example, remove this entire block %%%%%%%%%
   \mySection{My Amazing Section}{
-    \lipsum[2] % remove this line
+    \lipsum[2]
     \mySubSection{My Amazing SubSection} {
-      \lipsum[12] % remove this line
+      \lipsum[12]
+      \bulletpoints{
+      \item first item
+      \item second item
+      }
       \mySubSubSection{My Amazing SubSubSection} {
-        \lipsum[10] % remove this line
-        \myFigure{0.10}{examplefigure.jpg}{Hello, World} % remove this line
-        \lipsum[11-12] %remove this line
+        \lipsum[10]
+        \myFigure{0.10}{examplefigure.jpg}{Hello, World}
+        \lipsum[11-12]
         \myTable{0.4}{exampletable.png}{Hello, Table}
       }
     }
   }
-
   \mySection{My Amazing Section}{
-    \lipsum[2] % remove this line
+    \lipsum[2]
     \mySubSection{My Amazing SubSection} {
-      \lipsum[12] % remove this line
+      \lipsum[12]
       \mySubSubSection{My Amazing SubSubSection} {
-        \lipsum[18-21] % remove this line
+        \lipsum[18-21]
       }
     }
   }
