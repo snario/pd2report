@@ -8,17 +8,17 @@
 
 % Your information
 %   Enter your report information here
-\newcommand{\myFaculty}{ Faculty of Mathematics }
-\newcommand{\myTitle}{ Lorem Ipsum }
-\newcommand{\myName}{ Liam Horne }
-\newcommand{\myTerm}{ 2A }
-\newcommand{\myProgram}{ Computer Science }
-\newcommand{\myIdNumber}{ 20465555 }
-\newcommand{\myAddress}{ 123 Apple Street }
-\newcommand{\myCity}{ Cambridge, Ontario }
-\newcommand{\myPostalCode}{ A1X B2Y }
-\newcommand{\myPD}{ PD2: Critical Reflection and Report Writing }
-\newcommand{\myUwLocation}{ Waterloo, Ontario }
+\newcommand{\myFaculty}{Faculty of Mathematics}
+\newcommand{\myTitle}{Lorem Ipsum}
+\newcommand{\myName}{Liam Horne}
+\newcommand{\myTerm}{2A}
+\newcommand{\myProgram}{Computer Science}
+\newcommand{\myIdNumber}{20465555}
+\newcommand{\myAddress}{123 Apple Street}
+\newcommand{\myCity}{Cambridge, Ontario}
+\newcommand{\myPostalCode}{A1X B2Y}
+\newcommand{\myPD}{PD2: Critical Reflection and Report Writing}
+\newcommand{\myUwLocation}{Waterloo, Ontario}
 
 % Title Page (ignore)
 %   Creates the title page based on your information above
@@ -28,7 +28,7 @@
     {\myFaculty}
     {\myTitle}
     {\myPD \\ \myUwLocation}
-    {\myName \\ \myTerm\myProgram \\ ID\myIdNumber \\ \today}
+    {\myName \\ \myTerm \ \myProgram \\ ID \myIdNumber \\ \today}
 }
 
 % Letter of Submittal
@@ -110,7 +110,30 @@
 
   % Write your body here
 
-  \examplereport % remove this line
+  %%%%%%% Example, remove this entire block %%%%%%%%%
+  \mySection{My Amazing Section}{
+    \lipsum[2] % remove this line
+    \mySubSection{My Amazing SubSection} {
+      \lipsum[12] % remove this line
+      \mySubSubSection{My Amazing SubSubSection} {
+        \lipsum[10] % remove this line
+        \myFigure{0.10}{exampleimage.jpg}{Hello, World} % remove this line
+        \lipsum[11-12] %remove this line
+        \myTable{0.1}{exampleimage.jpg}{Hello, Table}
+      }
+    }
+  }
+
+  \mySection{My Amazing Section}{
+    \lipsum[2] % remove this line
+    \mySubSection{My Amazing SubSection} {
+      \lipsum[12] % remove this line
+      \mySubSubSection{My Amazing SubSubSection} {
+        \lipsum[18-21] % remove this line
+      }
+    }
+  }
+  %%%%%%% Example, remove this entire block %%%%%%%%%
 
 }
 
