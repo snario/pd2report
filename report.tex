@@ -1,12 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage{pd2}
-\usepackage{lipsum} % remove this
+\usepackage{listings}
+\usepackage{lipsum}
 
-% Your information
-%   Enter your report information here
+
 \faculty{Faculty of Mathematics}
-\reporttitle{Rses in Python,
-\\ why we should use it and when we should stop.}
+\reporttitle{.}
 \fullname{Jiaxin Liu}
 \term{3A}
 \program{Scientific Computation}
@@ -17,8 +16,7 @@
 \pdtitle{Work Term Report: Under supervision of Dr. Rumi Chunara at New York University}
 \waterloolocation{Waterloo, Ontario}
 
-% Title Page (ignore)
-%   Creates the title page based on your information above
+
 \newcommand{\createtitlepage} {
   \pagenumbering{roman}
   \waterlootitlepage
@@ -28,9 +26,7 @@
     {\myName \\ \myTerm \ \myProgram \\ ID \myIdNumber \\ \today}
 }
 
-% Letter of Submittal
-%   Write your letter of submittal below, the header, salutation,
-%   and signature (except the image) are done for you already
+
 \newcommand{\letterofsubmittal} {
   \waterlooletterofsubmittal
     {\myAddress}{\myCity}{\myPostalCode}{\myName}{\myIdNumber}
@@ -48,16 +44,9 @@
     Thank you for your assistance in preparing this report.
     }
     {
-    % Attach an image of your signature
-    % The first number is a scale factor
-    % (if you can't, just delete this and uncomment next line)
-     \scalebox{0.1}{\includegraphics{examplesignature.jpg}}
-    % \myName
+	\myName
     }
 }
-
-% Table of Contents
-%   The table of contents will be generated for you
 
 % Summary
 %   Write your summary here
@@ -81,13 +70,25 @@
   \renewcommand{\headrulewidth}{0pt}
   \rfoot{\thepage}
   \pagenumbering{arabic}
-  \mySection{Introduction}
-  {
+  \mySection{Introduction}{
+Python is as multi-paradigm language that allowed for object oriented, structural and functional programming. This dynamic language, along with it's large community and timing made it a great choice for both academics who wanted something easy to use and for engineers who wanted to rapidly develop products. Another factor is NumPy (Numeric Python) and its extension, SciPy (Scientific Python), which are a collection of open source Python projects that support large-scale scientific data processing. Once these tools went mainstream, data analysis with python skyrocketed to become what it is today.
+\\
+\\
+This means that there are a lot of packages that exist in the Python ecosystem that solve a lot of existing problems. Take \url {https://github.com/vinta/awesome-python} as an example, it is a collection of packages for all occasions. Whatever you want to do, it can be done in python.  Its incredibly important in research to not build everything from scratch, and to also be able to pass on work between parties. Python, as easy as it is to get started, is often a common language between developers.
+\\
+\\
+Machine learning, a particularly popular form of data analysis became extremely accessible with the advent of a few tools tools in the Python ecosystem:
 
-  \lipsum[8-9] % remove this line
+\begin{itemize}
+\item python notebooks: a way to explore data and code interactively
+\item pandas: a fast and efficient data manipulation tool
+\item scikit-learn: an extensive machine learning package that contains pipeline abstractions and ready to use algorithms
+\end{itemize}
 
-  % Write your introduction here
-
+These three tools allows us to rapidly develop end to end machine learning platforms with extremely low technical debt while maintain high maintainability and readability.
+\\
+\\
+From how easy it is to explore the data and generate reproducible research to the fast and efficient data manipulation and consistent and easy to understand machine learning pipeline apis provided my scikit learn, python is a great tool to get starting in building a machine learning model. However it is without its draw backs. Once that data gets larger and the computing must be out of core, we must either move on to different tools in the python ecosystem or move on to different languages that provide more power at the cost of simplicity.
   }
   \newpage
 }
@@ -111,39 +112,102 @@
 %     Read this for help: http://en.wikibooks.org/wiki/LaTeX/Tables
 \newcommand{\analysis}{
 
-  % Write your body here
 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %%%%%%% This is an example, remove this entire block %%%%%%%%%
-  \mySection{My Amazing Section}{
-    \lipsum[2]
-    \mySubSection{My Amazing SubSection} {
-      \lipsum[12]
-      \bulletpoints{
-      \item first item
-      \item second item
-      }
-      \mySubSubSection{My Amazing SubSubSection} {
-        \lipsum[10]
-        \myFigure{0.10}{examplefigure.jpg}{Hello, World}
-        \lipsum[11-12]
-        \myTable{0.3}{exampletable.png}{Hello, Table}
-      }
-    }
-  }
-  \mySection{My Amazing Section}{
-    \lipsum[2]
-    \mySubSection{My Amazing SubSection} {
-      \lipsum[12]
-      \mySubSubSection{My Amazing SubSubSection} {
-        \lipsum[18-21]
-      }
-    }
-  }
-  %%%%%%% This is an example, remove this entire block %%%%%%%%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mySection{Exploration}{
 
-  \newpage % This creates a new page, your may or may not want this, remove at your own discretion
+ Since python is very light weight and dynamic, it is a highly productive language and as a result, very effective in getting quick results. 
+ 
+ \mySubSection{Interactive Python Notebooks} {
+ \\
+  Notebooks provide a "workspace" for developing code and is great for supporting reproducible research by having one to one input output mappings. This way, as long as someone can open the notebook on their machine and run the cells, results can be generated on the fly.  
+  \\
+  \\
+  It's writing cells also support Markdown and LaTeX for when we want to convey our ideas and equations right from the notebook. This allows us to document our process better than comments in a script ever could. In fact, notebooks have now become a base tolo for teaching tools in the python community, an example of this would be "Mining the Social Web" from O'Reilly, where notebooks provide an interactive way to follow along with the examples. 
+  \\
+  \\
+  By developing with notebooks, we can provide step by step instructions on how execute certain programs or better explain design principals to other members. Lastly, the notebooks set up a homogenous environment for collaborators to share ideas.
+  }
+  
+  \mySubSection{Data Visualization} {
+  
+  Before jumping into building models its important to explore the data thats in front of you to get a better understanding of the relationships. Exploratory data analysis was promoted by John Tukey to encourage analysts to format new hypothesis that could lead to new data collection or experiments.
+
+    \myFigure{0.3}{seaborn.jpeg}{ seaborn.py example gallery  }
+
+  Luckily, python has some really great data visualization packages, one of them being seaborn. Seaborn is a library that provides a high level interface for drawing statistical graphics. Together with python notebook,s we have plenty of transformations and visualizations to play with right out of the box.
+  
+   \myFigure{0.5}{ipython.png}{ screen shot of a research notebook}
+
+}
+
+}
+
+\mySection{Prototyping}{
+
+\mySubSection{Preprocessing}{
+	Similar to R, Python's Pandas package provides a DataFrame for doing data manipulation. As mention before due to how dynamic python is, its much more productive to do processing in python than other languages like Java or C. Moreover, since its so much faster for the developer, time saved could be spent finding bottlenecks and optimized in C, however if you write your code correctly with pandas, all of it is run in C to begin with.
+}
+
+\mySubSection{Pipelining}{
+	We must also remember that real data does not come in a perfect computer readable format and that most machine learning algorithms requires data to come in the form of a matrix in $R^n$.
+	\\
+	\\ Consider the task of text classification. We first need to normalize the text, then count words and normalize using inverse document frequency, then factorize the matrix to a lower dimension to find the topics and then turned into a sparse matrix for the algorithm to ingest. By using the pipelines api, it becomes extremely easy to code modular pieces of work and compose/recompose them like the figure 3.
+	
+	 \myFigure{0.7}{pipeline.png}{example pipeline code}
+	 
+	 \mySubSubSection{Classifiers} {
+	   Unlike other packages, scikit learn has a huge collection of reimplemented state of the art algorithms that rely on well implemented open source tools like LibSVM and LibLinear. Along with plenty of algorithms, injecting them into the pipeline is as simple as adding a classifier at the end of the pipeline, this makes trying different algorithms and pipelines very effective.
+	   
+	   \myFigure{0.25}{scikit.png}{scikit-learn cheatsheet}
+	   
+	     By taking advantage of the pipeline api and python meta-programming, the secondary problem of hyper parameter optimization is solved with a builtin implementation of grid search using cross validation. While frameworks require custom grid search code to be developed along with complex parameter injections, scikit alleviates a lot of technical debt by letting us write less code. 
+		}
+	}
+}
+
+\mySection{Model Evaluation}{
+  Once we've build various models, we'll want to find the best ones and scikit also allows us to do this simply as well.
+  scikit.metrics is a helpful module that contains many ways to measure performance. For example, consider the problem of detecting a rare cancer. If the cancer shows up on average once in every hundred patients, then saying that no one has cancer would yield a 99\% accuracy. Although the algorithm was simply "return False", it essentially fails on the accuracy metric. Instead we may use f1-score to consider the false positive and false negatives as a way to measure success.\\
+  \\
+   \myFigure{0.5}{plots.png}{various model diagnostic plots}
+   
+   \mySubSection{Model Inspection}{
+   One downfall, present in many libraries is the lack of model inspection. After the function that maps the inputs to the results is learned, it is very hard to understand the various feature importances or do hypothesis tests on the features significances. This question in itself sets up a divide between the rigour of statistical methods rather than black box machine learning methods where we are simply minimizing a cost function. However more and more packages are coming out for inspecting the models, particularly in tree based methods. If statistical significance matters more performance, then statsmodels is a package that could provide these features. 
+   }
+   
+}
+
+\mySection{Beyond Python}{}
+
+Python allows use to do three things very well with minimal boilerplate code. 
+
+\begin{itemize}
+\item exploration
+\item pipelines
+\item evaluation
+\end{itemize}
+
+	In this section we will discuss some downfalls and how to avoid them along with some solutions that might exist outside of python.
+\\
+\\
+	Python notebooks have recently inspired many other languages to follow in it's foot steps and recently announced project Jupyter which serves as a language agnostic notebook that currently supports many languages including, R, Spark, and Lua, all fantastic tools for data analysis or machine learning. Scikit learn's pipeline api design has been so successful that larger projects like Spark are designing it's apis to parallel scikit's own. This is to say that starting out with python's ecosystem allows us to learn transferable design patterns.
+\\
+\\
+	The main drawback however is that due to pythons primary limitations (these can be avoided with a lot of work) scaling to many cores or many nodes is difficult and training on large datasets is almost impossible after 1million rows. Once the data grows, what we can do with a  end to end python pipeline becomes a bit limited. In this section I will introduce two tools that we may use to alleviate some of the pains of long compute hours.
+
+\mySubSection{Vowpal Wabbit}{ 
+	"Vowpal Wabbit is a machine learning system which pushes the frontier of machine learning with techniques such as online, hashing, allreduce, reductions, learning2search, active, and interactive learning."
+	\\
+	\\
+	Due to these efficient tricks, Vowpal Wabbit (VW) is the king of large data single machine problems. However its api is far from simple and it lacks any builtin pipeline or grid search as it is primarily a set of CLI tools. At the cost of developer time we gain computing performance. What is recommended it to explore a subset of the data and prototype models in the python be more moving to VW, depending on how you implement the pipelines, the preprocessing pipelines can be recycled as long as you write a pipe element that converts the data to the VW format.
+}
+
+\mySubSection{Spark MLLib} {
+	"Apache Spark? is a fast and general engine for large-scale data processing."
+	\\
+	\\
+	If the data is so large that it must be in HDFS then it is recommended we move to Spark if we have access to clusters of nodes that we can parallelize over. Spark has been a big contender for bid data processing and development of MLLib, it's machine learning library has been very strong. Recently it has included DataFrames and Pipelines into the framework and are working on implementing gridsearch. Spark is probably the closest to a end to end data processing pipeline like Python is, however it may often be overkill.
+}
 
 }
 
@@ -152,24 +216,11 @@
 \newcommand{\conclusions}{
   \section{Conclusions}
   {
-
-  \lipsum[33-35] % remove this line
-
-  % Write your conclusions here
-
-  }
-}
-
-% Recommendations
-%   Write your Recommendations here
-\newcommand{\recommendations}{
-  \section{Recommendations}
-  {
-
-  \lipsum[37-39] % remove this line
-
-  % Write your recommendations here
-
+The Python ecosystem is great for fast data analysis and machine learning. It has a great community with tonnes of support and packages. Minimizing the amount of code on needs to write before getting results. \\
+Notebooks allow us to produce informative reports of our analysis and thought process in a reproducible way. Scikit also provides a lot of efficiencies. By using their pipeline, feature unions, and massive library of ready to go algorithms, we alleviate a lot of technical debt on the people who have to use our code in the future. 
+\\
+\\
+The biggest bottleneck is that scikit is bound my memory and a single for, which makes massive parallelization difficult. If we want to avoid writing too much complex code, we might want to consider different tools. Two examples of such tools are vowpal wabbit which is very complex but powerful on a single machine and spark which requires a hadoop setup and many nodes to be effective. The problems with these however is that they are great for large production systems that take in millions of rows of data. This makes python idea for building fast prototypes. We can explore a space and build models extremely productively for proof of concept analysis. Once the data is too bed then we can recycle  some of our analysis code for vowpal wabbit or migrate to spark.
   }
 }
 
@@ -183,15 +234,6 @@
   }
 }
 
-% Appendices
-%   Add your appendices
-\newcommand{\myappendix}{
-  \addanappendix{Appendix A: Lorem Ipsum}{
-    \lipsum[50] % remove this line
-  }
-  \newpage
-  \addanappendix{Appendix B: PD2 Report Checlist}{\addchecklistappendix}
-}
 
 \begin{document}
   \createtitlepage
@@ -201,7 +243,5 @@
   \introduction
   \analysis
   \conclusions
-  \recommendations
   \references
-  \myappendix
 \end{document}

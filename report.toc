@@ -1,17 +1,20 @@
 \ttl@change@i {\@ne }{section}{0pt}{}{\contentsmargin {0pt} \thecontentslabel \enspace }{\contentsmargin {0pt}}{\titlerule *[.5pc]{.}\contentspage }\relax 
 \ttl@change@v {section}{}{}{}\relax 
-\contentsline {section}{List of Tables and Figures}{iv}
-\contentsline {section}{Summary}{v}
+\contentsline {section}{List of Tables and Figures}{iii}
+\contentsline {section}{Summary}{iv}
 \contentsline {section}{\numberline {1.0 }Introduction}{1}
-\contentsline {section}{\numberline {2.0 }My Amazing Section}{2}
-\contentsline {subsection}{\numberline {2.1}My Amazing SubSection}{2}
-\contentsline {subsubsection}{\numberline {2.1.1}My Amazing SubSubSection}{3}
-\contentsline {section}{\numberline {3.0 }My Amazing Section}{4}
-\contentsline {subsection}{\numberline {3.1}My Amazing SubSection}{5}
-\contentsline {subsubsection}{\numberline {3.1.1}My Amazing SubSubSection}{5}
-\contentsline {section}{\numberline {4.0 }Conclusions}{8}
-\contentsline {section}{\numberline {5.0 }Recommendations}{9}
-\contentsline {section}{References}{11}
-\contentsline {section}{Appendix A: Lorem Ipsum}{12}
-\contentsline {section}{Appendix B: PD2 Report Checlist}{13}
+\contentsline {section}{\numberline {2.0 }Exploration}{3}
+\contentsline {subsection}{\numberline {2.1}Interactive Python Notebooks}{3}
+\contentsline {subsection}{\numberline {2.2}Data Visualization}{4}
+\contentsline {section}{\numberline {3.0 }Prototyping}{6}
+\contentsline {subsection}{\numberline {3.1}Preprocessing}{6}
+\contentsline {subsection}{\numberline {3.2}Pipelining}{6}
+\contentsline {subsubsection}{\numberline {3.2.1}Classifiers}{7}
+\contentsline {section}{\numberline {4.0 }Model Evaluation}{8}
+\contentsline {subsection}{\numberline {4.1}Model Inspection}{10}
+\contentsline {section}{\numberline {5.0 }Beyond Python}{10}
+\contentsline {subsection}{\numberline {5.1}Vowpal Wabbit}{11}
+\contentsline {subsection}{\numberline {5.2}Spark MLLib}{12}
+\contentsline {section}{\numberline {6.0 }Conclusions}{12}
+\contentsline {section}{References}{14}
 \contentsfinish 
